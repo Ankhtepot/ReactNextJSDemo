@@ -31,7 +31,7 @@ export async function getStaticPaths() {
     await client.close();
 
     return {
-        fallback: false,
+        fallback: 'blocking',
         paths: result.map(meetup => ({
             params: {
                 meetupId: meetup._id.toString()
